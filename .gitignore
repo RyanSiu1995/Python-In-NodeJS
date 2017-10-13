@@ -1,0 +1,2 @@
+# All node modules not to be tracked
+node_modules/**
