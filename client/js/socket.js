@@ -2,6 +2,7 @@
 
 // Define the socket interaction
 $(document).ready((e) => {
+	socket.emit('python/execute', {name: 'hello.py'})
 	socket.on('python/msg', (data) => {
 		// Handle the bug from stdout
 		let msg = data.msg.replace(/\n|<br>/g, '').replace(/\(newLine\)/g, '<br>')

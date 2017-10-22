@@ -18,7 +18,8 @@ $(document).ready((e) => {
 				event.target.value = "";
 				// Function Control
 				if (!defaultSet(input)) {
-					socket.send("python/arg", input);
+					console.log(input);
+					socket.emit("python/arg", input);
 				}
 			}
 		}

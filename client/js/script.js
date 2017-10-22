@@ -11,12 +11,15 @@ var outputArr = {
 	]
 }
 // Initialize the socket
-var socket = io.connect('http://192.168.143.60:413');;
+var socket = io.connect("http://localhost:8080");
 // The default command in shell
 var defaultSet = function(value) {
 	switch (value) {
 		case "clear": 
 			outputArr.output = [];
+			return true;
+		case "kill":
+			socket.emit('python/kill', true);
 			return true;
 		default:
 			return false;
